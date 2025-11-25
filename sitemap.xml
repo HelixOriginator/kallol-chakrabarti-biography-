@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://helixoriginator.github.io/kallol-chakrabarti-biography-/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Sections -->
+  <url>
+    <loc>https://helixoriginator.github.io/kallol-chakrabarti-biography-/#about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://helixoriginator.github.io/kallol-chakrabarti-biography-/#achievements</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://helixoriginator.github.io/kallol-chakrabarti-biography-/#publications</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://helixoriginator.github.io/kallol-chakrabarti-biography-/#projects</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://helixoriginator.github.io/kallol-chakrabarti-biography-/#concepts</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://helixoriginator.github.io/kallol-chakrabarti-biography-/#profile</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Projects -->
+  <url>
+    <loc>https://helixoriginator.github.io/sanatan-dharma-research-repository/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helixoriginator.github.io/strategic-leadership-governance-ai/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://incomparable-pithivier-af2053.netlify.app/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://starlit-beijinho-f71d90.netlify.app/</loc>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
