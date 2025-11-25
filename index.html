@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kallol Chakrabarti | Helix Originator</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -13,20 +12,13 @@
       background-color: #0f172a;
       color: #f8fafc;
       font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
     }
 
-    /* Floating hero animation */
     @keyframes float {
       0% { transform: translateY(0px); }
       50% { transform: translateY(-15px); }
       100% { transform: translateY(0px); }
     }
-    .animate-float {
-      animation: float 6s ease-in-out infinite;
-    }
-
-    /* Button shine effect */
     .btn-shine {
       position: relative;
       overflow: hidden;
@@ -47,7 +39,6 @@
       height: 100%;
       background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
       transform: skewX(-25deg);
-      transition: 0s;
     }
     .btn-shine:hover::after {
       left: 150%;
@@ -55,9 +46,9 @@
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 bg-slate-950/80 backdrop-blur-md z-50 p-4 flex justify-between items-center">
     <div class="text-xl font-bold">Kallol Chakrabarti</div>
     <div class="space-x-6">
@@ -67,39 +58,52 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="min-h-screen flex flex-col justify-center items-center text-center px-4" id="hero">
     <h1 class="text-5xl md:text-6xl font-bold mb-4">Kallol Chakrabarti</h1>
-    <p class="text-xl md:text-2xl mb-6">Helix Originator | Independent Researcher</p>
+    <p class="text-xl md:text-2xl mb-6">Independent Researcher | Helix Originator</p>
     <a href="#about" class="btn-shine">Explore My Work</a>
   </section>
 
-  <!-- About Section -->
   <section class="min-h-screen flex flex-col justify-center items-center text-center px-4" id="about">
-    <h2 class="text-4xl font-bold mb-4">About Me</h2>
-    <p class="max-w-2xl text-lg mb-6">
-      I am an independent researcher, creator of the Helix Framework and Karma Index. My work focuses on AI Governance, policy innovation, and advancing civilizational studies. Top 2% researcher globally with 3,850+ downloads and 238+ published concepts.
+    <h2 class="text-4xl font-bold mb-4">About</h2>
+    <p class="max-w-3xl text-lg mb-6">
+      Kallol Chakrabarti is an independent researcher specializing in governance innovation, civilizational studies, and ethical AI frameworks. Known as “Kallol,” independent researcher and creator of the Kallol Wave Framework, recognized for contributions to governance innovation and ethical AI. His Medium article “From YouTube Learner to Policy Influencer: My Journey as Docu Helix” was featured under Recommended Stories in “Innovation Policies”, reflecting recognition by Medium’s editorial and algorithmic system.
     </p>
     <a href="#achievements" class="btn-shine">See Achievements</a>
   </section>
 
-  <!-- Achievements Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-slate-850" id="achievements">
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4" id="achievements">
     <h2 class="text-4xl font-bold mb-4">Achievements</h2>
-    <p class="max-w-2xl text-lg mb-6">
-      Pioneer of the Helix Kallol Doctrine, Karma Index, and Ethical AI Governance frameworks. Recognized globally among top independent researchers.
+    <p class="max-w-3xl text-lg mb-6">
+      Recently, I applied for the National Intellectual Property Awards 2025 on October 26, 2025, under the Individual Independent Researcher category, showcasing 238 DOIs, 25 copyrights, 1 patent, and recognitions from the Election Commission of India and Assam CMO. Top independent researcher globally with 3,850+ downloads across 238 DOIs, innovates via Helix Originator. Highlights: Zenodo 3000 downloads, SSRN 543 Downloads.<br><br>
+
+      My SSRN paper “Cultural Bias in Plagiarism Detection: Rethinking Authorship in the Digital Age” was curated and highlighted on Scoop.it under the topic Bonnes Pratiques en Documentation (August 2025). My work ‘Sacred Stories for Children: Simplifying Ancient Wisdom for a Global Future’ has been officially registered with the Indian Copyright Office and is indexed in the national public registry.<br><br>
+
+      As the Helix Originator and founder of Docu Helix, recognized by the Election Commission of India for Safeguarding Democratic Truth, the Assam Chief Minister's Office for Transformational Governance (Ref. No. 3726013), and invited as peer reviewer for Academia AI and Applications (San Francisco, October 7, 2025).<br><br>
+
+      25 articles with 90+ Novelty Index scores on DeSci Labs, 25 copyrights,
+      provisional patent (202411090481), four peer-reviewed journal articles,
+      one book Silent Wars (2025, Kindle), HarvardX Rhetoric certification,
+      Ronin Institute for Independent Scholarship membership, and over 150 original
+      concepts including DTRPI, Helix Kallol Doctrine, and Sanatana Samyata.<br><br>
+
+      Policy contributions include Assam’s Transformational Governance with acknowledgment by the Chief Minister’s Office.
+      My article “Safeguarding Democratic Truth – A Comprehensive Ready Reckoner for Countering Electoral Misinformation”
+      has been formally acknowledged by the Election Commission of India.
+      Peer review: “Invisible Shield: A Smart Border Security Solution” on Zenodo.
     </p>
     <a href="#publications" class="btn-shine">View Publications</a>
   </section>
 
-  <!-- Publications Section -->
   <section class="min-h-screen flex flex-col justify-center items-center text-center px-4" id="publications">
     <h2 class="text-4xl font-bold mb-4">Publications</h2>
-    <p class="max-w-2xl text-lg mb-6">Explore my research papers, policy papers, and contributions in AI and governance.</p>
-    <a href="https://example.com" class="btn-shine">Explore DOIs</a>
+    <p class="max-w-2xl text-lg mb-6">
+      Explore my verifiable achievements including DOIs, certificates, copyright registrations,
+      patent filings, and policy proposals on ORCID.
+    </p>
+    <a href="https://orcid.org/0009-0007-4971-8936" target="_blank" class="btn-shine">Explore DOIs</a>
   </section>
 
-  <!-- Footer -->
   <footer class="text-center py-6 bg-slate-950 text-slate-300">
     &copy; 2025 Kallol Chakrabarti. All Rights Reserved.
   </footer>
