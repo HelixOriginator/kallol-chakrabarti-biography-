@@ -1,184 +1,1307 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kallol Chakrabarti | Helix Originator</title>
-
-<!-- Google Search Console Verification -->
-<meta name="google-site-verification" content="6qcwYwzA6RaAwLVA6G3HBTprB8Bdw4A16uZCF5e9Ar8" />
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<style>
-body {
-background-color: #0f172a;
-color: #f8fafc;
-font-family: Arial, sans-serif;
-}
-
-.btn-shine {
-position: relative;
-overflow: hidden;
-background-color: #2563eb;
-color: white;
-padding: 0.75rem 1.5rem;
-border-radius: 0.5rem;
-font-weight: bold;
-text-decoration: none;
-display: inline-block;
-}
-.btn-shine::after {
-content: '';
-position: absolute;
-top: 0;
-left: -100%;
-width: 50%;
-height: 100%;
-background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
-transform: skewX(-25deg);
-}
-.btn-shine:hover::after {
-left: 150%;
-transition: 0.7s ease-in-out;
-}
-
-.highlight {
-color: #facc15;
-font-weight: bold;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kallol Chakrabarti — The Unaffiliated Phenomenon | Master Research Index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4E4BC;
+            --navy: #0A0E17;
+            --navy-light: #141B2D;
+            --cream: #0F1419;
+            --accent: #C9A227;
+            --success: #2E8B57;
+            --text: #E8ECF1;
+            --text-light: #8B95A5;
+            --card-bg: #161B22;
+            --card-border: rgba(212, 175, 55, 0.15);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--navy); }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--navy) 0%, #0d1117 50%, var(--navy-light) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 15s infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1200px;
+            padding: 2rem;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease;
+        }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        .hero-title .highlight {
+            background: linear-gradient(135deg, var(--gold) 0%, #F4E4BC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: rgba(255,255,255,0.7);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 23, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+        }
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .section-desc {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        .bio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .bio-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border: 1px solid var(--card-border);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .bio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .bio-card:hover::before { transform: scaleX(1); }
+        .bio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .bio-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+        .bio-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .bio-card .role {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .bio-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        .company-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .company-tag {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 2rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gold), var(--accent));
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+        }
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 450px;
+            position: relative;
+            border: 1px solid var(--card-border);
+        }
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
+            border-radius: 50%;
+            border: 4px solid var(--cream);
+            box-shadow: 0 0 0 4px var(--gold);
+        }
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -60px;
+            transform: translateY(-50%);
+        }
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -60px;
+            transform: translateY(-50%);
+        }
+        .timeline-year {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .achievement-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, #1a1f2e 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .achievement-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .achievement-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .achievement-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        .achievement-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+        .gwr-section {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            border-radius: 24px;
+            padding: 4rem;
+            margin: 4rem auto;
+            max-width: 1200px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+        }
+        .gwr-section::before {
+            content: '🏆';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 12rem;
+            opacity: 0.05;
+        }
+        .gwr-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .gwr-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--gold);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .gwr-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .gwr-desc {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .gwr-status {
+            background: rgba(46, 139, 87, 0.2);
+            border: 1px solid rgba(46, 139, 87, 0.3);
+            color: #4ade80;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .gwr-status strong { color: var(--gold); }
+        .gwr-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gwr-circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            50% { box-shadow: 0 0 0 30px rgba(212, 175, 55, 0); }
+        }
+        .gwr-circle .status-text {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .gwr-circle .status-main {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+        .gwr-circle .status-sub {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+        .quote-section {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+            border-top: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+        }
+        .quote-section::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 15rem;
+            color: rgba(212, 175, 55, 0.1);
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            line-height: 1;
+        }
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            color: #fff;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        .quote-author {
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+        .research-section {
+            background: var(--navy);
+            color: #fff;
+            padding: 6rem 2rem;
+        }
+        .research-section .section-title { color: #fff; }
+        .research-section .section-desc { color: rgba(255,255,255,0.6); }
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+        .research-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .research-card:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+        .research-card .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .research-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold-light);
+        }
+        .research-card p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .research-card .meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .footer {
+            background: var(--navy);
+            border-top: 1px solid var(--card-border);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .footer-tagline {
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 2rem;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+        }
+        @media (max-width: 768px) {
+            .hero-stats { gap: 1.5rem; }
+            .stat-number { font-size: 1.8rem; }
+            .timeline::before { left: 20px; }
+            .timeline-item, .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+            .timeline-content::before {
+                left: -45px !important;
+                right: auto !important;
+            }
+            .gwr-content { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .section { padding: 4rem 1.5rem; }
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-
 <body>
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#" class="nav-logo">Kallol Chakrabarti</a>
+            <ul class="nav-links">
+                <li><a href="#biography">Biography</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#gwr">Guinness Record</a></li>
+                <li><a href="#research">Research Index</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<nav class="fixed top-0 left-0 right-0 bg-slate-950/80 backdrop-blur-md z-50 p-4 flex justify-between items-center">
-<div class="text-xl font-bold">Kallol Chakrabarti</div>
-<div class="space-x-6">
-<a href="#about" class="hover:text-blue-400">About</a>
-<a href="#achievements" class="hover:text-blue-400">Achievements</a>
-<a href="#publications" class="hover:text-blue-400">Publications</a>
-<a href="#projects" class="hover:text-blue-400">Projects</a>
-<a href="#concepts" class="hover:text-blue-400">Concepts</a>
-<a href="#profile" class="hover:text-blue-400">Profile</a>
-</div>
-</nav>
+    <section class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-crown"></i>
+                The Unaffiliated Phenomenon
+            </div>
+            <h1 class="hero-title">
+                Kallol Chakrabarti<br>
+                <span class="highlight">Helix Originator</span>
+            </h1>
+            <p class="hero-subtitle">
+                From Global Pharma Giants to India's Leading Coaching Institutes to Pioneering Independent Research — 
+                The first non-affiliated researcher to achieve 264 DOI frameworks, 25 Govt. copyrights & global recognition 
+                <strong>without any funding, affiliation, or institutional support.</strong>
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">264</span>
+                    <span class="stat-label">DOI Frameworks</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">25</span>
+                    <span class="stat-label">Govt. Copyrights</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">400+</span>
+                    <span class="stat-label">Websites Built</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">₹0</span>
+                    <span class="stat-label">External Funding</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
-<!-- Hero Section -->
-<section class="min-h-screen flex flex-col justify-center items-center text-center px-4" id="hero">
-<h1 class="text-5xl md:text-6xl font-bold mb-4">Kallol Chakrabarti</h1>
-<p class="text-xl md:text-2xl mb-6">Independent Researcher | Helix Originator</p>
-<a href="#about" class="btn-shine">Explore My Work</a>
-</section>
+    <section class="section" id="biography">
+        <div class="section-header fade-in">
+            <div class="section-label">Professional Evolution</div>
+            <h2 class="section-title">A Journey of Transformation</h2>
+            <p class="section-desc">
+                Three distinct careers, one relentless pursuit of excellence — from molecules to minds to monumental research frameworks.
+            </p>
+        </div>
+        
+        <div class="bio-grid">
+            <div class="bio-card fade-in">
+                <div class="bio-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3>Pharmaceutical Foundation</h3>
+                <span class="role">Medical Representative & Pharma Professional</span>
+                <p>
+                    Began career in the pharmaceutical industry, representing and working with multinational giants 
+                    including <strong>AstraZeneca, MSD (Merck Sharp & Dohme), Organon,</strong> and <strong>Alembic Pharmaceuticals</strong>. 
+                    Developed deep expertise in healthcare communication, scientific detailing, and ethical medical promotion 
+                    across diverse therapeutic areas.
+                </p>
+                <div class="company-tags">
+                    <span class="company-tag">AstraZeneca</span>
+                    <span class="company-tag">MSD</span>
+                    <span class="company-tag">Organon</span>
+                    <span class="company-tag">Alembic</span>
+                </div>
+            </div>
+            
+            <div class="bio-card fade-in">
+                <div class="bio-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3>Teaching Excellence</h3>
+                <span class="role">Senior Faculty — SSC & Banking Competitive Exams</span>
+                <p>
+                    Transitioned to education, shaping thousands of aspirants at India's premier coaching institutes. 
+                    Served as faculty at <strong>Paramount Coaching Centre, Lucknow</strong> and <strong>Mahindra Coaching Institute</strong>, 
+                    specializing in quantitative aptitude, reasoning, and general awareness for SSC and Banking competitive examinations.
+                </p>
+                <div class="company-tags">
+                    <span class="company-tag">Paramount Lucknow</span>
+                    <span class="company-tag">Mahindra Institute</span>
+                    <span class="company-tag">SSC Exams</span>
+                    <span class="company-tag">Banking PO</span>
+                </div>
+            </div>
+            
+            <div class="bio-card fade-in">
+                <div class="bio-icon">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <h3>Independent Research Pioneer</h3>
+                <span class="role">Unaffiliated Independent Researcher</span>
+                <p>
+                    Entered research as an unaffiliated independent researcher — perhaps the first non-affiliated researcher 
+                    globally to achieve <strong>264 DOI frameworks, 25 Government of India copyrights, provisional patent,</strong> and 
+                    <strong>4 perfect 100% novelty scores</strong> — all without any funding, affiliation, or institutional support. 
+                    Self-taught via HarvardX. Creator of Framework Science.
+                </p>
+                <div class="company-tags">
+                    <span class="company-tag">264 DOIs</span>
+                    <span class="company-tag">25 Copyrights</span>
+                    <span class="company-tag">1 Patent</span>
+                    <span class="company-tag">Zero Funding</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- About Section -->
-<section class="min-h-screen flex flex-col justify-center items-center text-center px-4" id="about">
-<h2 class="text-4xl font-bold mb-4">About</h2>
-<p class="max-w-3xl text-lg mb-6">
-Kallol Chakrabarti is an independent researcher specializing in governance innovation, civilizational studies, and ethical AI frameworks. Known as “Kallol,” he is the creator of the Kallol Wave Framework, recognized for contributions to governance innovation and ethical AI. His Medium article “From YouTube Learner to Policy Influencer: My Journey as Docu Helix” was featured under Recommended Stories in “Innovation Policies,” reflecting recognition by Medium’s editorial and algorithmic system.
-</p>
-<a href="#achievements" class="btn-shine">See Achievements</a>
-</section>
+    <section class="section" id="journey" style="background: #0d1117;">
+        <div class="section-header fade-in">
+            <div class="section-label">Chronology of Excellence</div>
+            <h2 class="section-title">The Kallol Timeline</h2>
+            <p class="section-desc">
+                Key milestones across three careers — pharmaceutical, teaching, and independent research.
+            </p>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-year">Early Career</div>
+                    <h3 class="timeline-title">Pharmaceutical Industry</h3>
+                    <p class="timeline-desc">
+                        Launch of professional journey in medical representation and pharmaceutical sales with 
+                        AstraZeneca, MSD, Organon, and Alembic — building scientific communication expertise.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-year">Teaching Era</div>
+                    <h3 class="timeline-title">Competitive Exam Faculty</h3>
+                    <p class="timeline-desc">
+                        Joined Paramount Coaching Centre (Lucknow) and Mahindra Institute as senior faculty 
+                        for SSC and Banking competitive examinations, mentoring thousands of students.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-year">September 2017</div>
+                    <h3 class="timeline-title">IELTS Qualified — British Council</h3>
+                    <p class="timeline-desc">
+                        Successfully qualified IELTS examination conducted by British Council, demonstrating 
+                        international-standard English language proficiency and opening global academic pathways.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-year">Research Phase</div>
+                    <h3 class="timeline-title">Entering Independent Research</h3>
+                    <p class="timeline-desc">
+                        Began independent research journey as an unaffiliated researcher. Self-educated through 
+                        HarvardX. Started building original frameworks and concepts without institutional backing.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-year">2024-2025</div>
+                    <h3 class="timeline-title">264 DOIs & Global Recognition</h3>
+                    <p class="timeline-desc">
+                        Achieved 264 DOI-registered frameworks across 30+ domains. Received acknowledgements from 
+                        UK Metascience Unit, ILO/UN, Election Commission of India, and Assam CM Office.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-year">March 2026</div>
+                    <h3 class="timeline-title">National IP Awards 2026</h3>
+                    <p class="timeline-desc">
+                        Selected for verification round and attended as active participant at Bharat Mandapam, 
+                        New Delhi — advocate for Free Defence Publication mechanism. 25 IP India copyrights secured.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-year">2026</div>
+                    <h3 class="timeline-title">Guinness World Record Application</h3>
+                    <p class="timeline-desc">
+                        Applied for a new category in Guinness Book of World Records. Passed initial screening 
+                        and currently under manual review by the Guinness World Records team.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Achievements Section -->
-<section class="min-h-screen flex flex-col justify-center items-center text-center px-4" id="achievements">
-<h2 class="text-4xl font-bold mb-4">Achievements</h2>
-<p class="max-w-3xl text-lg mb-6">
-<span class="highlight">World Top Independent Researcher with highest documented downloads</span>.<br><br>
+    <section class="quote-section">
+        <p class="quote-text">
+            As an unaffiliated researcher with so many achievements and endorsements from top institutions, 
+            I am perhaps the first non-affiliated researcher to have achieved so many things without any funding, 
+            affiliation, or support.
+        </p>
+        <p class="quote-author">— Kallol Chakrabarti</p>
+    </section>
 
-Kallol Chakrabarti applied for the National Intellectual Property Awards 2025 on October 26, 2025, under the Individual Independent Researcher category, showcasing 243 DOIs, 25 copyrights, 1 patent, and recognitions from the Election Commission of India and Assam CMO. 
-<br><br>
-Recognized by the National IP Awards committee, which shortlisted my application for verification and further evaluation.
-<br><br>
-He is a top independent researcher globally with 
-<span class="highlight">4400 Total Downloads</span> across 
-<span class="highlight text-red-500">243 DOIs</span>, innovating via Helix Originator. 
-Highlights include 
-<span class="highlight">Zenodo 3450</span> and 
-<span class="highlight text-red-500">SSRN 628</span>.<br><br>
+    <section class="section" id="achievements">
+        <div class="section-header fade-in">
+            <div class="section-label">Verified Milestones</div>
+            <h2 class="section-title">Signature Achievements</h2>
+            <p class="section-desc">
+                A curated selection of verified accomplishments across pharmaceutical, teaching, and research domains.
+            </p>
+        </div>
+        
+        <div class="achievements-grid">
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">🏆</div>
+                <h4>National IP Awards 2026</h4>
+                <p>Active participant at Bharat Mandapam, New Delhi. Selected for verification round as advocate for Free Defence Publication mechanism.</p>
+                <div class="achievement-meta">
+                    <i class="fas fa-calendar"></i> March 2026
+                </div>
+            </div>
+            
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">📜</div>
+                <h4>25 Government Copyrights</h4>
+                <p>Officially registered with IP India — legally protected original frameworks and publications under the Indian Copyright Act.</p>
+                <div class="achievement-meta">
+                    <i class="fas fa-shield-alt"></i> IP India Verified
+                </div>
+            </div>
+            
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">🔬</div>
+                <h4>DeSci Labs Validated</h4>
+                <p>94.9% average novelty score across frameworks. 4 frameworks achieved perfect 100% novelty with zero global literature overlap.</p>
+                <div class="achievement-meta">
+                    <i class="fas fa-check-circle"></i> AI-Verified
+                </div>
+            </div>
+            
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">🤖</div>
+                <h4>Opal AI Platform</h4>
+                <p>First independent researcher to build domain-specific AI outperforming generic models for Indian policy analysis — hosted on Google infrastructure.</p>
+                <div class="achievement-meta">
+                    <i class="fas fa-robot"></i> Domain AI
+                </div>
+            </div>
+            
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">🌍</div>
+                <h4>Global Institutional Recognition</h4>
+                <p>Formal acknowledgements from UK Metascience Unit, ILO/UN, Election Commission of India, and Assam Chief Minister's Office.</p>
+                <div class="achievement-meta">
+                    <i class="fas fa-globe"></i> International
+                </div>
+            </div>
+            
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">📚</div>
+                <h4>23+ World-First Ready Reckoners</h4>
+                <p>World's highest evidence-based knowledge series including Ready Reckoner on PM Modi, Yogi Adityanath, and People's Political Dictionary.</p>
+                <div class="achievement-meta">
+                    <i class="fas fa-book"></i> Published
+                </div>
+            </div>
+            
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">🏗️</div>
+                <h4>400+ Websites Infrastructure</h4>
+                <p>179 GitHub + 200+ Netlify + 20 other platforms — all built single-handedly without institutional support or external funding.</p>
+                <div class="achievement-meta">
+                    <i class="fas fa-code"></i> Self-Built
+                </div>
+            </div>
+            
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">⚖️</div>
+                <h4>Provisional Patent Holder</h4>
+                <p>Patent No. 202411090481. Creator of Nano Banana Protocol for zero-cost defensive publication democratizing IP protection.</p>
+                <div class="achievement-meta">
+                    <i class="fas fa-certificate"></i> Patent Filed
+                </div>
+            </div>
+            
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">🎓</div>
+                <h4>IELTS British Council 2017</h4>
+                <p>Qualified IELTS examination in September 2017 through British Council, demonstrating international English language proficiency standards.</p>
+                <div class="achievement-meta">
+                    <i class="fas fa-language"></i> Sept 2017
+                </div>
+            </div>
+        </div>
+    </section>
 
-His SSRN paper “Cultural Bias in Plagiarism Detection: Rethinking Authorship in the Digital Age” was curated and highlighted on Scoop.it under the topic Bonnes Pratiques en Documentation (August 2025). His work ‘Sacred Stories for Children: Simplifying Ancient Wisdom for a Global Future’ has been officially registered with the Indian Copyright Office and is indexed in the national public registry.<br><br>
+    <section class="gwr-section" id="gwr">
+        <div class="gwr-content">
+            <div>
+                <div class="gwr-badge">
+                    <i class="fas fa-trophy"></i>
+                    Guinness World Records
+                </div>
+                <h2 class="gwr-title">World Record Application Under Review</h2>
+                <p class="gwr-desc">
+                    Applied for a new category in the Guinness Book of World Records based on unprecedented 
+                    achievements in independent research and framework science. The application has successfully 
+                    passed initial automated screening and is now undergoing manual review by the official 
+                    Guinness World Records assessment team.
+                </p>
+                <div class="gwr-status">
+                    <strong>Official Communication:</strong><br><br>
+                    "Hi KALLOL,<br>
+                    Thank you for your record enquiry.<br>
+                    We're just reviewing a few details before confirming the next steps and will be back in touch shortly.<br>
+                    Best wishes,<br>
+                    The Guinness World Records team"
+                </div>
+            </div>
+            <div class="gwr-visual">
+                <div class="gwr-circle">
+                    <span class="status-text">Current Status</span>
+                    <span class="status-main">Manual Review</span>
+                    <span class="status-sub">Stage 2 of 3</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-As the Helix Originator and founder of Docu Helix, he is recognized by the Election Commission of India for Safeguarding Democratic Truth, the Assam Chief Minister's Office for Transformational Governance (Ref. No. 3726013), and invited as peer reviewer for Academia AI and Applications (San Francisco, October 7, 2025).<br><br>
+    <section class="research-section" id="research">
+        <div class="section-header fade-in">
+            <div class="section-label" style="color: var(--gold);">Master Research Index</div>
+            <h2 class="section-title" style="color: #fff;">The Complete Research Portfolio</h2>
+            <p class="section-desc">
+                264 DOI-registered frameworks, 190+ original concepts, and 30+ domains of knowledge — 
+                the world's largest independent digital encyclopedia by a single researcher.
+            </p>
+        </div>
+        
+        <div class="research-grid">
+            <div class="research-card fade-in">
+                <div class="icon">🧬</div>
+                <h4>Framework Science Pioneer</h4>
+                <p>264 DOI-registered frameworks — the largest individual contribution to structured knowledge in modern academic history.</p>
+                <div class="meta">
+                    <span>264 DOIs</span>
+                    <span>30+ Domains</span>
+                </div>
+            </div>
+            
+            <div class="research-card fade-in">
+                <div class="icon">📖</div>
+                <h4>People's Political Dictionary</h4>
+                <p>World's first — 300+ political and constitutional terms explained in plain language for common citizens across 9 categories.</p>
+                <div class="meta">
+                    <span>300+ Terms</span>
+                    <span>9 Categories</span>
+                </div>
+            </div>
+            
+            <div class="research-card fade-in">
+                <div class="icon">⚖️</div>
+                <h4>Constitutional Dictionary</h4>
+                <p>World's first Constitutional Dictionary for Common People — simplifying Articles 14, 15, 19, 21, 32, 51A and fundamental rights.</p>
+                <div class="meta">
+                    <span>Common Language</span>
+                    <span>Legal Simplified</span>
+                </div>
+            </div>
+            
+            <div class="research-card fade-in">
+                <div class="icon">🏛️</div>
+                <h4>Viksit Bharat 2047 Architecture</h4>
+                <p>World's first independently authored integrated civilisational governance architecture for India's 2047 vision.</p>
+                <div class="meta">
+                    <span>AI-Enabled</span>
+                    <span>Digital Sovereignty</span>
+                </div>
+            </div>
+            
+            <div class="research-card fade-in">
+                <div class="icon">🍌</div>
+                <h4>Nano Banana Protocol</h4>
+                <p>World's first zero-cost, patent-democratizing defensive publication protocol enabling any citizen to register prior-art claims.</p>
+                <div class="meta">
+                    <span>Zero Cost</span>
+                    <span>Global Access</span>
+                </div>
+            </div>
+            
+            <div class="research-card fade-in">
+                <div class="icon">🕉️</div>
+                <h4>Sanatana Samyata</h4>
+                <p>World's first structured dharmic defense and knowledge system integrating civilisational wisdom with modern governance.</p>
+                <div class="meta">
+                    <span>Dharmic Defense</span>
+                    <span>Ethical AI</span>
+                </div>
+            </div>
+            
+            <div class="research-card fade-in">
+                <div class="icon">⚛️</div>
+                <h4>Quantum Karma Weaver</h4>
+                <p>World's first framework merging ancient Karma philosophy with quantum computational ethics and Vedantic decision-science.</p>
+                <div class="meta">
+                    <span>Quantum Ethics</span>
+                    <span>Vedantic AI</span>
+                </div>
+            </div>
+            
+            <div class="research-card fade-in">
+                <div class="icon">🦡</div>
+                <h4>Honey Badger Algorithm</h4>
+                <p>Novel metaheuristic optimisation algorithm for adaptive systems — independent research contribution to computational science.</p>
+                <div class="meta">
+                    <span>Metaheuristic</span>
+                    <span>Adaptive Systems</span>
+                </div>
+            </div>
+            
+            <div class="research-card fade-in">
+                <div class="icon">🎯</div>
+                <h4>National Outcomes Marketplace</h4>
+                <p>India's First Outcome-Based Governance Platform — Pay for Results Not Promises. 100% Outcome Verification.</p>
+                <div class="meta">
+                    <span>1.4B Citizens</span>
+                    <span>Zero Payment w/o Results</span>
+                </div>
+            </div>
+            
+            <div class="research-card fade-in">
+                <div class="icon">📊</div>
+                <h4>SSRN Top 4.6% Global Researcher</h4>
+                <p>Ranked in top 4.6% of researchers worldwide on SSRN among 27 million — Author ID: 7407085.</p>
+                <div class="meta">
+                    <span>Top 4.6%</span>
+                    <span>27M Researchers</span>
+                </div>
+            </div>
+            
+            <div class="research-card fade-in">
+                <div class="icon">🗳️</div>
+                <h4>Election Commission Recognition</h4>
+                <p>Formal acknowledgement from PGRS Cell, ECI confirming valuable suggestions for election process improvement officially recorded.</p>
+                <div class="meta">
+                    <span>ECI Verified</span>
+                    <span>Policy Impact</span>
+                </div>
+            </div>
+            
+            <div class="research-card fade-in">
+                <div class="icon">🏛️</div>
+                <h4>Assam CM Office Acknowledgement</h4>
+                <p>Official personal acknowledgement letter from Chief Minister's Office, Assam — tracked under reference no. 3726013.</p>
+                <div class="meta">
+                    <span>Ref: 3726013</span>
+                    <span>Official Tracking</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-Kallol Chakrabarti has authored 25 articles with 90+ Novelty Index scores on DeSci Labs, 25 copyrights,
-a provisional patent (202411090481), four peer-reviewed journal articles, one book *Silent Wars* (2025, Kindle), HarvardX Rhetoric certification, membership at the Ronin Institute for Independent Scholarship, and over 150 original concepts including DTRPI, Helix Kallol Doctrine, and Sanatana Samyata.<br><br>
+    <section class="section" style="background: #0d1117;">
+        <div class="section-header fade-in">
+            <div class="section-label">Live Evidence</div>
+            <h2 class="section-title">Verified Research Portals</h2>
+            <p class="section-desc">
+                Click any portal to explore live, publicly verifiable evidence of original research contributions.
+            </p>
+        </div>
+        
+        <div class="achievements-grid" style="max-width: 1400px; margin: 0 auto;">
+            <a href="https://helixoriginator.github.io/Screenshots-Institutions-Kallol-Chakrabarti-Validation/" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">📸</div>
+                    <h4>Institutional Validation Screenshots</h4>
+                    <p>Verified acknowledgments from UK Metascience Unit, ILO/UN, Election Commission & Assam CM Office.</p>
+                    <div class="achievement-meta">
+                        <i class="fas fa-external-link-alt"></i> Live Portal
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://helixoriginator.github.io/Kallol-Chakrabarti-Signature-Novelty-Record-2026/" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">✍️</div>
+                    <h4>Signature Novelty Record 2026</h4>
+                    <p>25 frameworks with 90-100% DeSci Labs novelty scores, including 4 perfect 100% scores — blockchain-verified.</p>
+                    <div class="achievement-meta">
+                        <i class="fas fa-external-link-alt"></i> Live Portal
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://father-of-original-concepts-globally.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">👑</div>
+                    <h4>Father of Original Concepts • Global</h4>
+                    <p>264 DOI frameworks • 190+ concepts • 25 copyrights • National IP Award 2026 • Top 4.6% researcher.</p>
+                    <div class="achievement-meta">
+                        <i class="fas fa-external-link-alt"></i> Live Portal
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://kallol-world-largest-digital-library.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">🗄️</div>
+                    <h4>World Largest Digital Library</h4>
+                    <p>241+ publicly hosted research files • Opal AI • 5.5K+ downloads • Zero institutional backing.</p>
+                    <div class="achievement-meta">
+                        <i class="fas fa-external-link-alt"></i> Live Portal
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://helixoriginator.github.io/national-outcomes-marketplace/" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">🎯</div>
+                    <h4>National Outcomes Marketplace</h4>
+                    <p>India's First Outcome-Based Governance Platform • Pay for Results Not Promises.</p>
+                    <div class="achievement-meta">
+                        <i class="fas fa-external-link-alt"></i> Live Portal
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
 
-His policy contributions include Assam’s Transformational Governance, formally acknowledged by the Chief Minister’s Office. His article “Safeguarding Democratic Truth – A Comprehensive Ready Reckoner for Countering Electoral Misinformation” has been formally acknowledged by the Election Commission of India. Peer review includes “Invisible Shield: A Smart Border Security Solution” on Zenodo.
-</p>
-<a href="#publications" class="btn-shine">View Publications</a>
-</section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Kallol Chakrabarti</div>
+            <p class="footer-tagline">
+                Helix Originator • Father of Original Concepts • Framework Science Pioneer<br>
+                From Pharma to Teaching to Research — Zero Funding, Infinite Impact
+            </p>
+            <div class="footer-links">
+                <a href="https://helixoriginator.github.io/kallol-record-master-research-index/" target="_blank">Master Index</a>
+                <a href="https://github.com/helixoriginator" target="_blank">GitHub</a>
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5286196" target="_blank">SSRN Paper</a>
+                <a href="https://zenodo.org/records/15766143" target="_blank">Zenodo Record</a>
+                <a href="https://helixoriginator.github.io/kallol-chakrabarti-books/" target="_blank">Books & Publications</a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Kallol Chakrabarti. All rights reserved. | Built single-handedly with zero institutional support.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+                    IELTS British Council 2017 • National IP Award 2026 Active Participant • Guinness World Record Application Under Review
+                </p>
+            </div>
+        </div>
+    </footer>
 
-<!-- Publications Section -->
-<section class="min-h-screen flex flex-col justify-center items-center text-center px-4" id="publications">
-<h2 class="text-4xl font-bold mb-4">Publications</h2>
-<p class="max-w-2xl text-lg mb-6">
-Explore Kallol Chakrabarti’s verifiable achievements including DOIs, certificates, copyright registrations,
-patent filings, and policy proposals on ORCID.
-</p>
-<a href="https://orcid.org/0009-0007-4971-8936" target="_blank" class="btn-shine">Explore DOIs</a>
-
-<!-- Newly Added Buttons -->
-<div class="mt-6 flex flex-col md:flex-row gap-4">
-<a href="https://helixoriginator.github.io/" target="_blank" class="px-6 py-3 rounded-lg font-bold text-white bg-pink-500 hover:bg-pink-600 shadow-lg">Helix Originator Website</a>
-<a href="https://zenodo.org/records/18114419" target="_blank" class="px-6 py-3 rounded-lg font-bold text-white bg-green-500 hover:bg-green-600 shadow-lg">Zenodo Research Record</a>
-</div>
-</section>
-
-<!-- Projects Section -->
-<section class="min-h-screen flex flex-col justify-center items-center text-center px-4" id="projects">
-<h2 class="text-4xl font-bold mb-4">Research & Projects</h2>
-<div class="flex flex-col space-y-4 text-lg">
-<a href="https://helixoriginator.github.io/sanatan-dharma-research-repository/" target="_blank" class="hover:text-blue-400">Sanatan Dharma Research Library</a>
-<a href="https://helixoriginator.github.io/strategic-leadership-governance-ai/" target="_blank" class="hover:text-blue-400">Strategic Leadership Governance</a>
-<a href="https://dapper-froyo-8bf4d9.netlify.app/" target="_blank" class="hover:text-blue-400">Kallol Resume</a>
-<a href="https://elaborate-banoffee-59c273.netlify.app/#most-read" target="_blank" class="font-bold text-yellow-400 hover:text-red-400">Digital Library</a>
-<a href="https://capable-swan-cc3731.netlify.app/" target="_blank" class="font-bold text-green-400 hover:text-red-400">Helix Library</a>
-<a href="https://helixoriginator.github.io/kallol-ready-reckoner/" target="_blank" class="font-bold text-pink-400 hover:text-red-400">Kallol Ready Reckoner</a>
-</div>
-</section>
-
-<!-- Concepts & Innovations Section -->
-<section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-slate-900" id="concepts">
-<h2 class="text-4xl font-bold mb-8">Concepts & Innovations</h2>
-<p class="max-w-3xl text-lg mb-6">
-Novel terms and concepts introduced by Kallol Chakrabarti to the world.
-</p>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl">
-<div class="bg-slate-800 p-4 rounded shadow hover:bg-slate-700 transition">
-<h3 class="font-bold text-xl mb-2">Invisible Country for Regime Changes</h3>
-<p>Concept highlighting global covert influence in regime transitions.</p>
-</div>
-<div class="bg-slate-800 p-4 rounded shadow hover:bg-slate-700 transition">
-<h3 class="font-bold text-xl mb-2">Kallol Wave Framework</h3>
-<p>A framework representing systemic waves of policy and innovation impact.</p>
-</div>
-<div class="bg-slate-800 p-4 rounded shadow hover:bg-slate-700 transition">
-<h3 class="font-bold text-xl mb-2">DTRPI</h3>
-<p>One of 150+ original concepts introduced for governance and research innovation.</p>
-</div>
-<div class="bg-slate-800 p-4 rounded shadow hover:bg-slate-700 transition">
-<h3 class="font-bold text-xl mb-2">Helix Kallol Doctrine</h3>
-<p>Guiding principle for transparent, ethical research and policy innovation.</p>
-</div>
-<div class="bg-slate-800 p-4 rounded shadow hover:bg-slate-700 transition">
-<h3 class="font-bold text-xl mb-2">Sanatana Samyata</h3>
-<p>Concept integrating traditional wisdom with modern civilizational studies.</p>
-</div>
-</div>
-</section>
-
-<!-- Scholarly Profile Section -->
-<section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-slate-850" id="profile">
-<h2 class="text-4xl font-bold mb-4">Scholarly Profile</h2>
-<p class="max-w-3xl text-lg mb-6">
-Kallol Chakrabarti resides in Lucknow. He successfully qualified the IELTS examination conducted by the British Council in 2017. In 2024, he completed an online certification from Harvard University, further strengthening his academic and research credentials. His scholarly pursuits exemplify a commitment to rigorous, independent research across governance, ethical AI, and civilizational studies.
-</p>
-</section>
-
-<footer class="text-center py-6 bg-slate-950 text-slate-300">
-&copy; 2025 Kallol Chakrabarti. All Rights Reserved.
-</footer>
-
+    <script>
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(10, 14, 23, 0.98)';
+            } else {
+                nav.style.background = 'rgba(10, 14, 23, 0.95)';
+            }
+        });
+    </script>
 </body>
 </html>
