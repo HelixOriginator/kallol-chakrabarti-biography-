@@ -619,6 +619,60 @@
             color: var(--gold);
             font-family: 'JetBrains Mono', monospace;
         }
+
+        /* ── NEW: Featured Research Cards ── */
+        .featured-research-card {
+            border: 1px solid rgba(212, 175, 55, 0.35) !important;
+            background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(255,255,255,0.03) 100%) !important;
+            position: relative;
+        }
+        .featured-research-card::after {
+            content: 'FEATURED';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            color: #000;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+        .novelty-box {
+            background: rgba(212, 175, 55, 0.07);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 10px 10px 0;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+        }
+        .novelty-box strong {
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .doi-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1rem;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .doi-link:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--gold);
+        }
+
         .footer {
             background: var(--navy);
             border-top: 1px solid var(--card-border);
@@ -755,10 +809,10 @@
                     <i class="fas fa-flask"></i>
                 </div>
                 <h3>Pharmaceutical Foundation</h3>
-                <span class="role">Medical Representative & Pharma Professional</span>
+                <span class="role">Medical Representative &amp; Pharma Professional</span>
                 <p>
                     Began career in the pharmaceutical industry, representing and working with multinational giants 
-                    including <strong>AstraZeneca, MSD (Merck Sharp & Dohme), Organon,</strong> and <strong>Alembic Pharmaceuticals</strong>. 
+                    including <strong>AstraZeneca, MSD (Merck Sharp &amp; Dohme), Organon,</strong> and <strong>Alembic Pharmaceuticals</strong>. 
                     Developed deep expertise in healthcare communication, scientific detailing, and ethical medical promotion 
                     across diverse therapeutic areas.
                 </p>
@@ -775,7 +829,7 @@
                     <i class="fas fa-chalkboard-teacher"></i>
                 </div>
                 <h3>Teaching Excellence</h3>
-                <span class="role">Senior Faculty — SSC & Banking Competitive Exams</span>
+                <span class="role">Senior Faculty — SSC &amp; Banking Competitive Exams</span>
                 <p>
                     Transitioned to education, shaping thousands of aspirants at India's premier coaching institutes. 
                     Served as faculty at <strong>Paramount Coaching Centre, Lucknow</strong> and <strong>Mahindra Coaching Institute</strong>, 
@@ -868,7 +922,7 @@
             <div class="timeline-item fade-in">
                 <div class="timeline-content">
                     <div class="timeline-year">2024-2025</div>
-                    <h3 class="timeline-title">264 DOIs & Global Recognition</h3>
+                    <h3 class="timeline-title">264 DOIs &amp; Global Recognition</h3>
                     <p class="timeline-desc">
                         Achieved 264 DOI-registered frameworks across 30+ domains. Received acknowledgements from 
                         UK Metascience Unit, ILO/UN, Election Commission of India, and Assam CM Office.
@@ -1046,6 +1100,53 @@
         </div>
         
         <div class="research-grid">
+
+            <!-- ══ TWO NEW FEATURED CARDS ══ -->
+
+            <div class="research-card fade-in featured-research-card">
+                <div class="icon">⚖️</div>
+                <h4>Bharat Rights Twin</h4>
+                <p>A Citizen–Policy–Justice Operating Layer for Last-Mile Governance in India.</p>
+                <div class="novelty-box">
+                    <strong>Why It's Novel:</strong>
+                    The first framework to merge AI-driven citizen rights tracking with constitutional justice delivery at the village/block level — creating a digital "twin" of every citizen's policy entitlements vs. actual access, enabling real-time grievance resolution without bureaucratic intermediaries.
+                </div>
+                <div class="novelty-box" style="border-left-color: #4ade80; background: rgba(74,222,128,0.05);">
+                    <strong style="color:#4ade80;">Impact:</strong>
+                    Democratises access to justice for 900 million rural Indians; enables proactive entitlement nudges rather than reactive complaint systems; directly feeds into PM's Viksit Bharat 2047 mission.
+                </div>
+                <div class="meta">
+                    <span>figshare DOI</span>
+                    <span>Last-Mile Governance</span>
+                </div>
+                <a href="https://doi.org/10.6084/m9.figshare.32102773" target="_blank" class="doi-link">
+                    <i class="fas fa-external-link-alt"></i> DOI: 10.6084/m9.figshare.32102773
+                </a>
+            </div>
+
+            <div class="research-card fade-in featured-research-card">
+                <div class="icon">🔭</div>
+                <h4>Defining the "Unaffiliated Independent Researcher" (UIR)</h4>
+                <p>A Formal Taxonomy for an Emerging Category of Knowledge Producer.</p>
+                <div class="novelty-box">
+                    <strong>Why It's Novel:</strong>
+                    First-ever formal academic taxonomy defining the UIR as a distinct epistemic category — separate from hobbyists, citizen scientists, and adjunct academics. Establishes criteria, recognition pathways, and ethical obligations for researchers operating entirely outside institutional frameworks.
+                </div>
+                <div class="novelty-box" style="border-left-color: #4ade80; background: rgba(74,222,128,0.05);">
+                    <strong style="color:#4ade80;">Impact:</strong>
+                    Lays groundwork for global policy reform on how peer review, funding bodies, and IP systems should treat non-affiliated researchers; validates Kallol Chakrabarti's own category-creating work and could reshape academic gatekeeping worldwide.
+                </div>
+                <div class="meta">
+                    <span>Humanities Commons DOI</span>
+                    <span>Epistemic Taxonomy</span>
+                </div>
+                <a href="https://doi.org/10.17613/x24c0-96280" target="_blank" class="doi-link">
+                    <i class="fas fa-external-link-alt"></i> DOI: 10.17613/x24c0-96280
+                </a>
+            </div>
+
+            <!-- ══ ORIGINAL CARDS ══ -->
+
             <div class="research-card fade-in">
                 <div class="icon">🧬</div>
                 <h4>Framework Science Pioneer</h4>
@@ -1182,7 +1283,7 @@
                 <div class="achievement-card fade-in">
                     <div class="achievement-icon">📸</div>
                     <h4>Institutional Validation Screenshots</h4>
-                    <p>Verified acknowledgments from UK Metascience Unit, ILO/UN, Election Commission & Assam CM Office.</p>
+                    <p>Verified acknowledgments from UK Metascience Unit, ILO/UN, Election Commission &amp; Assam CM Office.</p>
                     <div class="achievement-meta">
                         <i class="fas fa-external-link-alt"></i> Live Portal
                     </div>
@@ -1247,7 +1348,7 @@
                 <a href="https://github.com/helixoriginator" target="_blank">GitHub</a>
                 <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5286196" target="_blank">SSRN Paper</a>
                 <a href="https://zenodo.org/records/15766143" target="_blank">Zenodo Record</a>
-                <a href="https://helixoriginator.github.io/kallol-chakrabarti-books/" target="_blank">Books & Publications</a>
+                <a href="https://helixoriginator.github.io/kallol-chakrabarti-books/" target="_blank">Books &amp; Publications</a>
             </div>
             <div class="footer-bottom">
                 <p>© 2026 Kallol Chakrabarti. All rights reserved. | Built single-handedly with zero institutional support.</p>
